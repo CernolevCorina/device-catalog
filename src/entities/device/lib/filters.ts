@@ -21,7 +21,7 @@ export function filterDevices (data: Device[], query: querySchemaInterface) {
 		keyof querySchemaInterface,
 		querySchemaInterface[keyof querySchemaInterface]
 	][]).forEach(([key, value]) => {
-		if (methods[key] && value !== undefined) {
+		if (methods[key] && value) {
 			devices = methods[key](
 				devices,
 				value as never
