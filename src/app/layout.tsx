@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/widgets/Navbar";
 import Footer from "@/widgets/Footer";
 import ThemeProvider from "@/shared/providers/ThemeProvider";
+import { ReactNode } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html
@@ -35,9 +36,7 @@ export default function RootLayout({
         <ThemeProvider>
           <Navbar />
 
-          <main>
-            {children}
-          </main>
+          <main>{children}</main>
 
           <Footer />
         </ThemeProvider>
